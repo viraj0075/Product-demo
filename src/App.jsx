@@ -26,13 +26,13 @@ function App() {
               <main>
                 <Hero />
                 <LogoStrip />
-                <Empowering />
                 <ProblemSolution />
                 <ProductConcept />
                 <FuturisticFeatures />
                 <UseCases />
                 <Collaboration />
                 <Testimonials />
+                <Empowering />
                 <Blog />
                 <CTA />
               </main>

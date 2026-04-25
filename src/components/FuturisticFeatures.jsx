@@ -61,7 +61,7 @@ export default function FuturisticFeatures() {
 
   return (
     <section ref={containerRef} className="layout-container py-8 lg:py-14">
-      <div className="text-center mb-20 animate-up">
+      <div className="text-center mb-8 md:mb-12 animate-up">
         <span className="text-brand-primary text-base lg:text-xl font-bold tracking-wider uppercase mb-4 block">Capabilities</span>
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
           Futuristic Features
@@ -71,49 +71,31 @@ export default function FuturisticFeatures() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-24 lg:gap-32">
+      <div className="flex flex-col gap-20 lg:gap-32">
         {futuristicFeatures.map((feature, idx) => (
-          <div key={idx} className={`flex flex-col ${feature.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20 animate-up`}>
-            
+          <div key={idx} className={`flex flex-col ${feature.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center justify-center gap-12 lg:gap-16 animate-up`}>
+
             {/* Text Content */}
-            <div className="flex-1 space-y-6">
-              <div className="w-12 h-12 rounded-xl bg-brand-primary/20 flex items-center justify-center text-brand-primary text-2xl shadow-[0_0_15px_rgba(168,85,247,0.3)]">
+            <div className="w-full lg:w-1/2 space-y-5 text-center lg:text-left flex flex-col items-center lg:items-start">
+              <div className="w-12 h-12 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary text-2xl shadow-[0_0_15px_rgba(168,85,247,0.3)]">
                 {feature.icon}
               </div>
               <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
                 {feature.title}
               </h3>
-              <div className="flex items-center gap-2 text-brand-primary text-sm font-semibold tracking-wide">
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-brand-primary text-sm font-semibold tracking-wide">
                 <span>✦</span> Embark on a journey of data-driven decision-making
               </div>
-              <p className="text-gray-400 text-lg leading-relaxed">
+              <p className="text-gray-400 text-base lg:text-lg leading-relaxed max-w-xl">
                 {feature.desc}
               </p>
             </div>
 
             {/* Image & Floating Dashboard */}
-            <div className="flex-1 w-full relative">
-              <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+            <div className="w-full lg:w-1/2 relative max-w-md lg:max-w-lg mx-auto">
+              <div className="relative w-full aspect-video sm:aspect-4/3 rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
                 <img src={feature.img} alt={feature.title} className="w-full h-full object-cover opacity-80 mix-blend-screen" />
                 <div className="absolute inset-0 bg-brand-primary/10 mix-blend-overlay"></div>
-              </div>
-              
-              {/* Floating UI Element */}
-              <div className={`absolute ${feature.reverse ? '-bottom-6 -right-6 lg:-bottom-10 lg:-right-10' : '-bottom-6 -left-6 lg:-bottom-10 lg:-left-10'} w-2/3 max-w-[280px] h-32 md:h-40 bg-brand-dark/95 backdrop-blur-xl border border-white/10 rounded-2xl p-5 shadow-2xl flex flex-col justify-between float-dashboard z-10`}>
-                <div className="flex justify-between items-center">
-                  <div className="w-12 h-2 bg-white/20 rounded-full"></div>
-                  <div className="flex gap-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-primary/50"></div>
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-primary/50"></div>
-                  </div>
-                </div>
-                <div className="flex items-end justify-between h-16 gap-1.5">
-                  {[40, 70, 45, 90, 60, 85, 50].map((h, i) => (
-                    <div key={i} className="w-full bg-white/5 rounded-t-sm relative group">
-                       <div className="absolute bottom-0 w-full bg-brand-primary rounded-t-sm transition-all duration-300 group-hover:brightness-125" style={{height: `${h}%`}}></div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
 
