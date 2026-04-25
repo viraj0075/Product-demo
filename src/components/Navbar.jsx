@@ -1,0 +1,87 @@
+import { useEffect, useRef, useState } from 'react';
+import {  FaBars, FaTimes } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { BiChart } from "react-icons/bi";
+
+
+export default function Navbar() {
+  const navRef = useRef(null);
+  const navigate = useNavigate();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        navRef.current.classList.add('bg-brand-surface/80', 'shadow-xl', 'border-white/20');
+        navRef.current.classList.remove('bg-brand-surface/30', 'border-white/10');
+      } else {
+        navRef.current.classList.remove('bg-brand-surface/80', 'shadow-xl', 'border-white/20');
+        navRef.current.classList.add('bg-brand-surface/30', 'border-white/10');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <>
+      <div className="fixed top-3 left-0 w-full z-50">
+        <div className="layout-container">
+          <nav ref={navRef} className="w-full transition-all duration-300 bg-brand-surface/30 backdrop-blur-md text-white border border-white/10 py-3 px-4 flex justify-between items-center rounded-2xl md:rounded-full">
+        <div className="flex items-center gap-2 cursor-pointer group" onClick={() => navigate('/')}>
+          <BiChart className="text-brand-primary text-xl group-hover:scale-110 transition-transform" />
+          <span className="font-bold text-xl tracking-tight">DataWise</span>
+        </div>
+
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+          <a href="#about" className="hover:text-brand-primary transition-colors">About Us</a>
+          <a href="#use-cases" className="hover:text-brand-primary transition-colors">Use Cases</a>
+          <a href="#pricing" className="hover:text-brand-primary transition-colors">Pricing</a>
+          <a href="#about" className="hover:text-brand-primary transition-colors">About</a>
+        </div>
+
+        <div className="hidden md:flex items-center gap-4">
+          <button className="text-sm font-medium hover:text-white text-gray-300 transition-colors">Log In</button>
+          <button className="text-sm font-medium bg-brand-primary hover:bg-purple-600 text-white px-5 py-2 rounded-full transition-all hover:scale-105 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+            Get Started
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2 text-2xl text-gray-300 hover:text-white transition-colors cursor-pointer"
+          onClick={(e) => {
+            e.preventDefault();
+            setIsMobileMenuOpen(!isMobileMenuOpen);
+          }}
+          aria-label="Toggle mobile menu"
+        >
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+          </nav>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-brand-dark/95 backdrop-blur-xl flex flex-col items-center justify-center gap-6 pt-12 md:hidden transition-all duration-300">
+          <a href="#products" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Products</a>
+          <a href="#use-cases" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Use Cases</a>
+          <a href="#pricing" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Pricing</a>
+          <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">About Us</a>
+
+          <div className="flex flex-col w-full max-w-[260px] gap-3 mt-6">
+            <button onClick={() => setIsMobileMenuOpen(false)} className="w-full text-base font-medium text-white bg-brand-primary py-3 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.4)] hover:bg-purple-600 transition-all hover:scale-105">
+              Get Started
+            </button>
+            <button onClick={() => setIsMobileMenuOpen(false)} className="w-full text-base font-medium text-gray-300 hover:text-white py-3 border border-white/10 rounded-full hover:bg-white/5 transition-all">
+              Log In
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}

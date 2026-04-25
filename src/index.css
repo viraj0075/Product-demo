@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-inter: 'Inter', sans-serif;
+  --color-brand-primary: #a855f7; /* Purple 500 */
+  --color-brand-dark: #090510; /* Deep purple-black */
+  --color-brand-surface: #10081c; /* Lighter purple-black */
+  --color-brand-border: #1c0f2e;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-brand-dark);
+  color: white;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(168, 85, 247, 0.3);
+  color: white;
+}
+
+@layer components {
+  .layout-container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12;
+  }
+}
