@@ -7,10 +7,9 @@ import ProblemSolution from './components/ProblemSolution';
 import ProductConcept from './components/ProductConcept';
 import FuturisticFeatures from './components/FuturisticFeatures';
 import UseCases from './components/UseCases';
-import Collaboration from './components/Collaboration';
 import Testimonials from './components/Testimonials';
 import Blog from './components/Blog';
-import CTA from './components/CTA';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -31,10 +30,9 @@ function App() {
                 <FuturisticFeatures />
                 <UseCases />
                 <Empowering />
-                {/* <Collaboration /> */}
                 <Testimonials />
                 <Blog />
-                <CTA />
+                <Contact />
               </main>
             }
           />
