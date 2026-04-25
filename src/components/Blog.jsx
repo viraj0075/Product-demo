@@ -48,10 +48,10 @@ export default function Blog() {
   ];
 
   return (
-    <section ref={containerRef} className="layout-container py-24">
-      <div className="text-center mb-16 blog-title">
-        <span className="text-brand-primary text-sm font-bold tracking-wider uppercase mb-4 block">Blog</span>
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">In the spotlight</h2>
+    <section ref={containerRef} className="layout-container text-center lg:text-left py-8 lg:py-14">
+      <div className="text-center mb-12 blog-title">
+        <span className="empower-tag text-brand-primary text-base lg:text-xl font-bold tracking-wider uppercase mb-4 block">Blog</span>
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">In the spotlight</h2>
         <p className="text-gray-400 max-w-2xl mx-auto">Discover the latest industry trends, expert insights, and success stories to stay ahead of the curve.</p>
       </div>
 
@@ -59,9 +59,9 @@ export default function Blog() {
         {posts.map((post, idx) => (
           <div key={idx} className="blog-card group cursor-pointer">
             <div className="rounded-2xl overflow-hidden mb-6 aspect-video bg-brand-surface">
-              <img 
-                src={post.img} 
-                alt={post.title} 
+              <img
+                src={post.img}
+                alt={post.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>

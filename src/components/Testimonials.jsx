@@ -7,11 +7,11 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Testimonials() {
   const containerRef = useRef(null);
   const sliderRef = useRef(null);
+  const animationRef = useRef(null); // 🔥 store animation
 
   useEffect(() => {
     let ctx = gsap.context(() => {
 
-      // Header + cards animation
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -28,10 +28,10 @@ export default function Testimonials() {
           ease: "power2.out"
         }, "-=0.3");
 
-      // 🔥 TRUE infinite smooth slider
+      // 🔥 Infinite loop animation
       const totalWidth = sliderRef.current.scrollWidth / 2;
 
-      gsap.to(sliderRef.current, {
+      animationRef.current = gsap.to(sliderRef.current, {
         x: `-=${totalWidth}`,
         duration: 25,
         ease: "none",
@@ -88,14 +88,14 @@ export default function Testimonials() {
   return (
     <section
       ref={containerRef}
-      className="py-24 border-t border-white/5 bg-brand-surface/20 overflow-hidden"
+      className="py-8 lg:py-14 overflow-hidden"
     >
       <div className="layout-container">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 testim-header gap-6">
+        <div className="flex flex-col md:flex-row justify-center items-center text-center lg:text-left mb-16 testim-header gap-6">
           <div>
-            <span className="text-brand-primary text-sm font-bold tracking-wider uppercase mb-4 block">
+            <span className="text-brand-primary text-base lg:text-xl font-bold tracking-wider uppercase mb-4 block">
               Success Stories
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-white">
@@ -103,7 +103,7 @@ export default function Testimonials() {
             </h2>
           </div>
 
-          <div className="flex gap-4">
+          {/* <div className="flex gap-4">
             <button
               onClick={handlePrev}
               className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/5 transition-colors"
@@ -117,11 +117,15 @@ export default function Testimonials() {
             >
               →
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* Slider */}
-        <div className="overflow-hidden">
+        <div
+          className="overflow-hidden"
+          onMouseEnter={() => animationRef.current.pause()}
+          onMouseLeave={() => animationRef.current.play()}
+        >
           <div
             ref={sliderRef}
             className="flex gap-6"
