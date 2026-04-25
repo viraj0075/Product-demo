@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import AboutUs from '../assets/About-us.gif';
+import AboutUs from '../assets/About/About-us.gif';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,7 +54,7 @@ export default function Empowering() {
     <section ref={containerRef} className="layout-container py-8 lg:py-14" id="about">
       <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12 justify-between">
         <div className="flex-1 max-w-2xl text-center md:text-left">
-          <span className="empower-tag text-brand-primary text-xl font-bold tracking-wider uppercase mb-4 block">About Us</span>
+          <span className="empower-tag text-brand-primary text-base lg:text-xl font-bold tracking-wider uppercase mb-4 block">About Us</span>
           <h2 className="empower-title text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
             AI Innovation
           </h2>

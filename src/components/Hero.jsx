@@ -71,7 +71,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="layout-container pt-28 pb-8 sm:pb-16 md:pb-20 flex flex-col items-center text-center"
+      className="layout-container pt-28 flex flex-col items-center text-center"
     >
       {/* TEXT CONTENT */}
       <div className="max-w-4xl space-y-6 z-10 mb-6 sm:mb-8 md:mb-16">
