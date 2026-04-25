@@ -51,27 +51,25 @@ export default function Empowering() {
   }, []);
 
   return (
-    <section ref={containerRef} className="layout-container py-8 lg:py-14" id="about">
-      <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12 justify-between">
-        <div className="flex-1 max-w-2xl text-center md:text-left">
+    <section ref={containerRef} className="layout-container text-center lg:text-left py-8 lg:py-14" id="about">
+      <div className="flex flex-col lg:flex-row lg:items-center items-center justify-center lg:justify-between gap-8 lg:gap-12">
+        <div className="flex-1 max-w-2xl text-center lg:text-left">
           <span className="empower-tag text-brand-primary text-base lg:text-xl font-bold tracking-wider uppercase mb-4 block">About Us</span>
           <h2 className="empower-title text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
             AI Innovation
           </h2>
           <p className="empower-text text-gray-400 text-lg md:text-xl mb-12 leading-relaxed">
-            We are at the forefront of transforming businesses with artificial intelligence. Founded in 2021, we have consistently pushed the boundaries of AI development, creating cutting-edge solutions that drive growth and efficiency.
-            <br /><br />
-            Our team of expert data scientists and engineers are dedicated to delivering innovative technology that helps industry leaders adapt in a fast-paced and ever-changing business landscape.
+           We help businesses unlock growth through advanced AI solutions. Since 2021, our team of expert data scientists and engineers has been building innovative, scalable technologies that turn complex data into real, actionable insights. We focus on improving efficiency, accelerating decision-making, and helping companies stay competitive in a rapidly evolving digital landscape.
           </p>
 
-          <div className="flex flex-wrap gap-10 md:gap-20 mb-10 justify-center md:justify-normal">
+          <div className="flex flex-wrap gap-5 mb-10 justify-center lg:justify-normal">
             <div className="empower-stat">
               <div className="text-4xl md:text-5xl font-bold text-white mb-2 stat-num" data-target="32" data-suffix="+">0+</div>
-              <div className="text-gray-400 text-sm">Years of<br />Innovation</div>
+              <div className="text-gray-400 text-sm">Years of Innovation</div>
             </div>
             <div className="empower-stat">
               <div className="text-4xl md:text-5xl font-bold text-white mb-2 stat-num" data-target="20">0</div>
-              <div className="text-gray-400 text-sm">Global Countries<br />Worldwide</div>
+              <div className="text-gray-400 text-sm">Global Countries</div>
             </div>
             <div className="empower-stat">
               <div className="text-4xl md:text-5xl font-bold text-white mb-2 stat-num" data-target="4000" data-suffix="+">0+</div>

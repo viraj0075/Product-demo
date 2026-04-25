@@ -101,7 +101,7 @@ export default function ProductConcept() {
       {/* Cards (Redesigned) */}
       <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {conceptCards.map((card, idx) => (
-          <div key={idx} className="stagger-card h-full cursor-pointer overflow-hidden">
+          <div key={idx} className={`stagger-card h-full cursor-pointer overflow-hidden ${idx === 2 ? 'sm:col-span-2 lg:col-span-1' : ''}`}>
             <div className="group h-full rounded-2xl border border-white/10 bg-white/3 backdrop-blur-xl transition-all duration-500 hover:border-brand-primary/30 hover:shadow-[0_20px_50px_rgba(0,255,150,0.08)]">
               {/* Image */}
               <div className="relative w-full h-72 overflow-hidden rounded-t-3xl">
