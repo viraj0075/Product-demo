@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import  { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -87,9 +87,11 @@ export default function Contact() {
             ></textarea>
           </div>
 
-          <button className="form-field mt-4 w-full py-4 bg-brand-primary text-white font-semibold text-lg rounded-2xl hover:bg-purple-600 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(168,85,247,0.2)] transition-all duration-300 cursor-pointer">
-            Submit
-          </button>
+          <div className="form-field mt-4">
+            <button className="w-full py-4 bg-brand-primary text-white font-semibold text-lg rounded-2xl hover:bg-purple-600 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(168,85,247,0.2)] transition-all duration-300 cursor-pointer">
+              Submit
+            </button>
+          </div>
         </form>
 
       </div>
