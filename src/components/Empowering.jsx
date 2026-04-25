@@ -14,6 +14,7 @@ export default function Empowering() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 80%",
+          once: true
         }
       });
 
@@ -36,6 +37,8 @@ export default function Empowering() {
           scrollTrigger: {
             trigger: el,
             start: "top 85%",
+            once: true
+
           },
           val: target,
           duration: 2.5,
@@ -59,7 +62,7 @@ export default function Empowering() {
             AI Innovation
           </h2>
           <p className="empower-text text-gray-400 text-lg md:text-xl mb-12 leading-relaxed">
-           We help businesses unlock growth through advanced AI solutions. Since 2021, our team of expert data scientists and engineers has been building innovative, scalable technologies that turn complex data into real, actionable insights. We focus on improving efficiency, accelerating decision-making, and helping companies stay competitive in a rapidly evolving digital landscape.
+            We help businesses unlock growth through advanced AI solutions. Since 2021, our team of expert data scientists and engineers has been building innovative, scalable technologies that turn complex data into real, actionable insights. We focus on improving efficiency, accelerating decision-making, and helping companies stay competitive in a rapidly evolving digital landscape.
           </p>
 
           <div className="flex flex-wrap gap-5 mb-10 justify-center lg:justify-normal">

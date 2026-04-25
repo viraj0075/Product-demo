@@ -14,6 +14,7 @@ export default function UseCases() {
         scrollTrigger: {
           trigger: '.animate-up',
           start: "top 85%",
+          once: true
         },
         y: 40,
         opacity: 0,
@@ -28,6 +29,8 @@ export default function UseCases() {
           scrollTrigger: {
             trigger: grid,
             start: "top 80%",
+            once: true
+
           },
           y: 50,
           opacity: 0,
@@ -88,7 +91,7 @@ export default function UseCases() {
       <div className="stagger-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {useCases.map((useCase, idx) => (
           <div key={idx} className="stagger-card h-full cursor-pointer">
-            <div className="group h-full bg-white/[0.02] backdrop-blur-xl border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-500 hover:border-brand-primary/40 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(168,85,247,0.15)] flex flex-col relative">
+            <div className="group h-full bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-500 hover:border-brand-primary/40 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(168,85,247,0.15)] flex flex-col relative">
               <div className="w-full h-48 sm:h-56 overflow-hidden relative border-b border-white/5">
                 <img src={useCase.img} alt={useCase.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80" />
               </div>

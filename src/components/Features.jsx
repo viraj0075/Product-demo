@@ -14,6 +14,7 @@ export default function Features() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 80%",
+          once: true
         }
       });
 
@@ -60,8 +61,8 @@ export default function Features() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((feature, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="feature-card group bg-brand-surface border border-white/5 p-8 rounded-3xl hover:-translate-y-2 hover:border-brand-primary/30 hover:shadow-[0_10px_30px_rgba(168,85,247,0.05)] transition-all duration-300"
             >
               <div className="w-14 h-14 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-primary/20 transition-all duration-300">

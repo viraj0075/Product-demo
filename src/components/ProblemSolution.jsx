@@ -15,6 +15,7 @@ export default function ProblemSolution() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 85%",
+          once: true
         },
         y: 40,
         opacity: 0,

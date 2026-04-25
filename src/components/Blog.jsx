@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { posts } from '../constants/Post';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +14,7 @@ export default function Blog() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 80%",
+          once: true
         }
       });
 
@@ -29,23 +31,6 @@ export default function Blog() {
     return () => ctx.revert();
   }, []);
 
-  const posts = [
-    {
-      img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop",
-      tag: "Tech",
-      title: "The Rise of AI in Business Analytics: What You Need to Know"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop",
-      tag: "Business",
-      title: "Optimizing Your Workflow: A Step-by-Step Guide"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop",
-      tag: "Data",
-      title: "Unlocking the Power of Data Analytics for Your Team"
-    }
-  ];
 
   return (
     <section ref={containerRef} className="layout-container text-center lg:text-left py-8 lg:py-14">

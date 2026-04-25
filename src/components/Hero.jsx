@@ -90,7 +90,7 @@ export default function Hero() {
           <button className="w-fit mx-auto sm:mx-0 px-6 sm:px-8 py-3 sm:py-4 bg-brand-primary text-white font-semibold rounded-full hover:bg-purple-600 hover:scale-90 transition-all duration-300 shadow-[0_0_20px_rgba(168,85,247,0.4)] cursor-pointer">
             Explore Solutions
           </button>
-          <button className="w-fit mx-auto sm:mx-0 px-6 sm:px-8 py-3 sm:py-4 bg-white/10 border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-300 backdrop-blur-md cursor-pointer">
+          <button className="w-fit mx-auto sm:mx-0 px-6 sm:px-8 py-3 sm:py-4 bg-white/10 border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-300 backdrop-blur-sm cursor-pointer">
             Get Started
           </button>
         </div>
@@ -109,7 +109,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-linear-to-b from-brand-dark/10 via-transparent to-brand-dark/90 "></div>
 
         {/* Floating Card 1 */}
-        <div className="float-card-1 absolute bottom-4 left-4 md:bottom-10 md:left-10 bg-white/10 backdrop-blur-xl border border-white/20 p-4 md:p-5 rounded-2xl shadow-2xl hidden md:flex flex-col gap-4 w-44 sm:w-52 md:w-64">
+        <div className="float-card-1 absolute bottom-4 left-4 md:bottom-10 md:left-10 bg-white/10 backdrop-blur-sm border border-white/20 p-4 md:p-5 rounded-2xl shadow-2xl hidden md:flex flex-col gap-4 w-44 sm:w-52 md:w-64">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
               <FaChartBar className="text-brand-primary text-sm" />
@@ -130,7 +130,7 @@ export default function Hero() {
         </div>
 
         {/* Floating Card 2 */}
-        <div className="float-card-2 absolute top-4 right-4 md:top-10 md:right-10 bg-white/10 backdrop-blur-xl border border-white/20 p-2 md:p-4 rounded-full shadow-2xl flex items-center gap-2 md:gap-4">
+        <div className="float-card-2 absolute top-4 right-4 md:top-10 md:right-10 bg-white/10 backdrop-blur-sm border border-white/20 p-2 md:p-4 rounded-full shadow-2xl flex items-center gap-2 md:gap-4">
           <div className="flex -space-x-2 md:-space-x-3">
             <div className="w-7 h-7 md:w-10 md:h-10 rounded-full overflow-hidden">
               <img src="https://i.pravatar.cc/150?img=32" className="w-full h-full object-cover" />

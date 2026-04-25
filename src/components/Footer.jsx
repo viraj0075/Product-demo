@@ -15,6 +15,7 @@ export default function Footer() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 85%",
+          once: true
         },
         y: 50,
         opacity: 0,
@@ -27,6 +28,7 @@ export default function Footer() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 85%",
+          once: true
         },
         opacity: 0,
         duration: 1,
@@ -41,14 +43,14 @@ export default function Footer() {
     <footer ref={containerRef} className="relative py-20 overflow-hidden">
 
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 max-w-7xl h-[400px] bg-brand-primary/10 blur-[140px] rounded-full"></div>
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 max-w-7xl h-[400px] bg-brand-primary/10 blur-[80px] rounded-full"></div>
       </div>
 
       <div className="layout-container relative z-10">
-        <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-10 md:p-14 shadow-[0_20px_80px_rgba(0,0,0,0.4)]
+        <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-sm p-10 md:p-14 shadow-[0_20px_80px_rgba(0,0,0,0.4)]
                         text-center lg:text-left">
 
-          <div className="flex justify-between">
+          <div className="flex justify-between py-10">
 
             {/* Brand */}
             <div className="footer-col space-y-5 max-w-[260px] flex flex-col items-center lg:items-start">
