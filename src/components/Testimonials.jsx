@@ -94,7 +94,7 @@ export default function Testimonials() {
 
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-center items-center text-center lg:text-left mb-16 testim-header gap-6">
-          <div>
+          <div className='flex flex-col items-center justify-center'>
             <span className="text-brand-primary text-base lg:text-xl font-bold tracking-wider uppercase mb-4 block">
               Success Stories
             </span>
