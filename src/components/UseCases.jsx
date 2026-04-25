@@ -74,9 +74,9 @@ export default function UseCases() {
   ];
 
   return (
-    <section ref={containerRef} className="layout-container py-24 border-t border-white/5">
+    <section ref={containerRef} className="layout-container py-8 lg:py-14">
       <div className="text-center mb-16 animate-up">
-        <span className="text-brand-primary text-sm font-bold tracking-wider uppercase mb-4 block">Integration</span>
+        <span className="text-brand-primary text-base lg:text-xl font-bold tracking-wider uppercase mb-4 block">Integration</span>
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
           Seamless Integration with Your <br className="hidden md:block"/> Existing Tech Ecosystem
         </h2>
@@ -85,7 +85,7 @@ export default function UseCases() {
       <div className="stagger-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {useCases.map((useCase, idx) => (
           <div key={idx} className="stagger-card h-full">
-            <div className="group h-full bg-brand-surface/40 border border-white/5 rounded-3xl overflow-hidden hover:border-brand-primary/30 transition-all duration-300 hover:-translate-y-2">
+            <div className="group h-full bg-brand-surface/40 border border-white/5 rounded-2xl md:rounded-4xl overflow-hidden hover:border-brand-primary/30 transition-all duration-300 hover:-translate-y-2">
               <div className="w-full h-48 overflow-hidden relative">
                 <img src={useCase.img} alt={useCase.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 mix-blend-lighten" />
                 <div className="absolute inset-0 bg-brand-primary/10 mix-blend-overlay"></div>

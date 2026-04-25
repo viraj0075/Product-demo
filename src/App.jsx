@@ -30,9 +30,9 @@ function App() {
                 <ProductConcept />
                 <FuturisticFeatures />
                 <UseCases />
+                <Empowering />
                 <Collaboration />
                 <Testimonials />
-                <Empowering />
                 <Blog />
                 <CTA />
               </main>
