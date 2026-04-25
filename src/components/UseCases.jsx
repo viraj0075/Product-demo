@@ -75,24 +75,27 @@ export default function UseCases() {
 
   return (
     <section ref={containerRef} className="layout-container py-8 lg:py-14">
-      <div className="text-center mb-16 animate-up">
-        <span className="text-brand-primary text-base lg:text-xl font-bold tracking-wider uppercase mb-4 block">Integration</span>
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-          Seamless Integration with Your <br className="hidden md:block"/> Existing Tech Ecosystem
+      <div className="text-center mb-8 md:mb-12  animate-up">
+        <span className="text-brand-primary text-base lg:text-xl font-bold tracking-wider uppercase mb-4 block">Real-World Applications</span>
+        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Tailored for Every Industry
         </h2>
+        <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
+          Discover how modern teams use DataWise to eliminate guesswork, automate reporting, and turn raw metrics into predictable growth.
+        </p>
       </div>
 
       <div className="stagger-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {useCases.map((useCase, idx) => (
-          <div key={idx} className="stagger-card h-full">
-            <div className="group h-full bg-brand-surface/40 border border-white/5 rounded-2xl md:rounded-4xl overflow-hidden hover:border-brand-primary/30 transition-all duration-300 hover:-translate-y-2">
-              <div className="w-full h-48 overflow-hidden relative">
-                <img src={useCase.img} alt={useCase.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 mix-blend-lighten" />
-                <div className="absolute inset-0 bg-brand-primary/10 mix-blend-overlay"></div>
+          <div key={idx} className="stagger-card h-full cursor-pointer">
+            <div className="group h-full bg-white/[0.02] backdrop-blur-xl border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden transition-all duration-500 hover:border-brand-primary/40 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(168,85,247,0.15)] flex flex-col relative">
+              <div className="w-full h-48 sm:h-56 overflow-hidden relative border-b border-white/5">
+                <img src={useCase.img} alt={useCase.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80" />
               </div>
-              <div className="p-8">
-                <h3 className="text-white font-bold text-xl mb-3 group-hover:text-brand-primary transition-colors">{useCase.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{useCase.desc}</p>
+
+              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-start relative z-10">
+                <h3 className="text-white font-bold text-xl sm:text-2xl mb-3 group-hover:text-brand-primary transition-colors duration-300">{useCase.title}</h3>
+                <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{useCase.desc}</p>
               </div>
             </div>
           </div>

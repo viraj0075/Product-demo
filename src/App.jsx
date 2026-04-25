@@ -31,7 +31,7 @@ function App() {
                 <FuturisticFeatures />
                 <UseCases />
                 <Empowering />
-                <Collaboration />
+                {/* <Collaboration /> */}
                 <Testimonials />
                 <Blog />
                 <CTA />
