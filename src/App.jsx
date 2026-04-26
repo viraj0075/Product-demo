@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import LogoStrip from './components/LogoStrip';
+import SmoothScroll from './components/SmoothScroll';
 
 // Lazy load components below the fold
 const ProductConcept = lazy(() => import('./components/ProductConcept'));
@@ -20,34 +21,36 @@ const LoadingFallback = () => <div className="min-h-[200px] flex items-center ju
 function App() {
   return (
     <div className="min-h-screen bg-brand-dark text-white font-inter selection:bg-brand-primary/30 selection:text-white">
-      <Router>
-        <Navbar />
+      <SmoothScroll>
+        <Router>
+          <Navbar />
 
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <main>
-                <Hero />
-                <LogoStrip />
-                <Suspense fallback={<LoadingFallback />}>
-                  <ProductConcept />
-                  <FuturisticFeatures />
-                  <UseCases />
-                  <Empowering />
-                  <Testimonials />
-                  <Blog />
-                  <Contact />
-                </Suspense>
-              </main>
-            }
-          />
-        </Routes>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <main>
+                  <Hero />
+                  <LogoStrip />
+                  <Suspense fallback={<LoadingFallback />}>
+                    <ProductConcept />
+                    <FuturisticFeatures />
+                    <UseCases />
+                    <Empowering />
+                    <Testimonials />
+                    <Blog />
+                    <Contact />
+                  </Suspense>
+                </main>
+              }
+            />
+          </Routes>
 
-        <Suspense fallback={null}>
-          <Footer />
-        </Suspense>
-      </Router>
+          <Suspense fallback={null}>
+            <Footer />
+          </Suspense>
+        </Router>
+      </SmoothScroll>
     </div>
   );
 }
