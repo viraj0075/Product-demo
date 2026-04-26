@@ -29,12 +29,12 @@ const SmoothScroll = ({ children }) => {
   useEffect(() => {
     // Initialize Lenis
     const lenisInstance = new Lenis({
-      duration: 1.5,
+      duration: 3.5,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Power4 out
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.8,
+      wheelMultiplier: 1,
       smoothTouch: false,
       touchMultiplier: 2,
       infinite: false,
