@@ -90,7 +90,7 @@ export default function ProductConcept() {
             <div className="group h-full rounded-2xl md:rounded-4xl border border-white/10 bg-white/3 backdrop-blur-sm transition-all duration-500 hover:border-brand-primary/30 hover:shadow-[0_20px_50px_rgba(0,255,150,0.08)]">
               {/* Image */}
               <div className="relative w-full h-72 overflow-hidden rounded-t-4xl">
-                <video src={card.img} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" autoPlay muted loop></video>
+                <video src={card.img} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" autoPlay muted loop poster="/og-image.jpg"></video>
 
                 {/* Overlay */}
                 {/* <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent"></div> */}

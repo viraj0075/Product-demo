@@ -118,6 +118,7 @@ export default function Hero() {
           loop
           playsInline
           preload="auto"
+          poster="/hero.webp"
         >
           <source src={voiceVideo} type="video/mp4" />
         </video>
