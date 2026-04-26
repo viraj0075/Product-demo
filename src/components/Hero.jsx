@@ -98,7 +98,7 @@ export default function Hero() {
         </p>
 
         <div className="hero-btns-wrapper mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="w-fit mx-auto sm:mx-0 px-6 sm:px-8 py-3 sm:py-4 bg-brand-primary text-white font-semibold rounded-full hover:bg-purple-600 hover:scale-95 transition-all duration-300 shadow-[0_0_20px_rgba(168,85,247,0.4)] cursor-pointer">
+          <button className="w-fit mx-auto sm:mx-0 px-6 sm:px-8 py-3 sm:py-4 bg-brand-primary-dark text-white font-semibold rounded-full hover:bg-purple-600 hover:scale-95 transition-all duration-300 shadow-[0_0_20px_rgba(168,85,247,0.4)] cursor-pointer">
             Explore Solutions
           </button>
 
@@ -119,6 +119,7 @@ export default function Hero() {
           playsInline
           preload="auto"
           poster="/hero.webp"
+          fetchpriority="high"
         >
           <source src={voiceVideo} type="video/mp4" />
         </video>

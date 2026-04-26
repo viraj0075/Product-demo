@@ -115,7 +115,7 @@ export default function Contact() {
 
             {/* Button */}
             <div className="form-field mt-2 sm:mt-4">
-              <button className="w-full py-2.5 sm:py-3 rounded-lg sm:rounded-xl bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold text-sm sm:text-base hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
+              <button className="w-full py-2.5 sm:py-3 rounded-lg sm:rounded-xl bg-brand-primary-dark text-white font-semibold text-sm sm:text-base hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
                 Send Message
               </button>
             </div>

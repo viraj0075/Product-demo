@@ -116,7 +116,7 @@
                       placeholder="Enter your email"
                       className="bg-transparent px-4 py-2 text-sm text-white outline-none w-full text-center lg:text-left"
                     />
-                    <button className="bg-brand-primary px-4 py-2 text-sm text-white hover:bg-purple-600 transition">
+                    <button className="bg-brand-primary-dark px-4 py-2 text-sm text-white hover:bg-purple-600 transition">
                       Join
                     </button>
                   </div>
