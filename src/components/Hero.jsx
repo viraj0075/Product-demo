@@ -2,11 +2,14 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { FaChartBar, FaStar } from "react-icons/fa";
 import voiceVideo from "../assets/Voice.mp4";
+import { useLenis } from "./SmoothScroll";
 
 export default function Hero() {
   const containerRef = useRef(null);
+  const lenis = useLenis();
 
   useEffect(() => {
+    // ... existing GSAP code ...
     let ctx;
     let timeout;
 

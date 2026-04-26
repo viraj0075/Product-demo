@@ -2,11 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { BiChart } from "react-icons/bi";
+import { useLenis } from './SmoothScroll';
 
 
 export default function Navbar() {
   const navRef = useRef(null);
   const navigate = useNavigate();
+  const lenis = useLenis();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -36,6 +38,24 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+
+    if (lenis) {
+      lenis.scrollTo(targetId, {
+        offset: -80, // Offset for fixed navbar
+        duration: 1.5,
+      });
+    } else {
+      // Fallback
+      const element = document.querySelector(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <>
       <div className="fixed top-3 left-0 w-full z-50">
@@ -48,11 +68,11 @@ export default function Navbar() {
 
             {/* Desktop Links */}
             <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-              <a href="#solutions" className="hover:text-brand-primary transition-colors">Solutions</a>
-              <a href="#use-cases" className="hover:text-brand-primary transition-colors">Use Cases</a>
-              <a href="#blog" className="hover:text-brand-primary transition-colors">Blog</a>
-              <a href="#about" className="hover:text-brand-primary transition-colors">About Us</a>
-              <a href="#contact" className="hover:text-brand-primary transition-colors">Contact</a>
+              <a href="#solutions" onClick={(e) => handleNavClick(e, '#solutions')} className="hover:text-brand-primary transition-colors">Solutions</a>
+              <a href="#use-cases" onClick={(e) => handleNavClick(e, '#use-cases')} className="hover:text-brand-primary transition-colors">Use Cases</a>
+              <a href="#blog" onClick={(e) => handleNavClick(e, '#blog')} className="hover:text-brand-primary transition-colors">Blog</a>
+              <a href="#about" onClick={(e) => handleNavClick(e, '#about')} className="hover:text-brand-primary transition-colors">About Us</a>
+              <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="hover:text-brand-primary transition-colors">Contact</a>
             </div>
 
             <div className="hidden md:flex items-center gap-4">
@@ -89,11 +109,11 @@ export default function Navbar() {
           : "opacity-0 -translate-y-8 pointer-events-none"
           }`}
       >
-        <a href="#solutions" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Solutions</a>
-        <a href="#use-cases" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Use Cases</a>
-        <a href="#blog" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Blog</a>
-        <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">About Us</a>
-        <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Contact</a>
+        <a href="#solutions" onClick={(e) => handleNavClick(e, '#solutions')} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Solutions</a>
+        <a href="#use-cases" onClick={(e) => handleNavClick(e, '#use-cases')} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Use Cases</a>
+        <a href="#blog" onClick={(e) => handleNavClick(e, '#blog')} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Blog</a>
+        <a href="#about" onClick={(e) => handleNavClick(e, '#about')} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">About Us</a>
+        <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Contact</a>
 
         <div className="flex flex-col w-full max-w-[260px] gap-3 mt-6">
           <button onClick={() => setIsMobileMenuOpen(false)} className="w-full text-base font-medium text-white bg-brand-primary-dark py-3 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.4)] hover:bg-purple-600 transition-all hover:scale-105">
