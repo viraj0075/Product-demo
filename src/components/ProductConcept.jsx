@@ -1,9 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Product1 from "../assets/Product/p-1.gif"
-import Product2 from "../assets/Product/p-2.gif"
-import Product3 from "../assets/Product/p-3.gif"
+import { conceptCards } from '../constants/ConceptCards';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,23 +50,7 @@ export default function ProductConcept() {
     return () => ctx.revert();
   }, []);
 
-  const conceptCards = [
-    {
-      title: "The Problem",
-      desc: "Businesses struggle with scattered data, slow insights, and manual reporting. Decision-makers are drowning in data but starving for true clarity.",
-      img: Product1
-    },
-    {
-      title: "The Solution",
-      desc: "DataWise centralizes all your scattered data into one hub, utilizes powerful AI to instantly generate insights, and automates your entire reporting workflow.",
-      img: Product2
-    },
-    {
-      title: "The Outcome",
-      desc: "Save hundreds of hours, radically improve decision-making accuracy, and scale your growth with absolute confidence.",
-      img: Product3
-    }
-  ];
+
 
   return (
     <section ref={containerRef} className="layout-container py-8 lg:py-14">
