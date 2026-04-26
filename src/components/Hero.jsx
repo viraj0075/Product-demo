@@ -151,10 +151,10 @@ export default function Hero() {
         <div className="float-card-2 absolute top-4 right-4 md:top-10 md:right-10 bg-white/10 backdrop-blur-sm border border-white/20 p-2 md:p-4 rounded-full shadow-2xl flex items-center gap-2 md:gap-4">
           <div className="flex -space-x-2 md:-space-x-3">
             <div className="w-7 h-7 md:w-10 md:h-10 rounded-full overflow-hidden">
-              <img src="https://i.pravatar.cc/150?img=32" className="w-full h-full object-cover" alt="Avatat"/>
+              <img src="https://i.pravatar.cc/150?img=32" className="w-full h-full object-cover" alt="Avatar" loading="lazy" />
             </div>
             <div className="w-7 h-7 md:w-10 md:h-10 rounded-full overflow-hidden">
-              <img src="https://i.pravatar.cc/150?img=47" className="w-full h-full object-cover" alt="Avatar"/>
+              <img src="https://i.pravatar.cc/150?img=47" className="w-full h-full object-cover" alt="Avatar" loading="lazy" />
             </div>
             <div className="w-7 h-7 md:w-10 md:h-10 rounded-full bg-brand-primary flex items-center justify-center">
               <FaStar />

@@ -1,15 +1,21 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import LogoStrip from './components/LogoStrip';
-import Empowering from './components/Empowering';
-import ProductConcept from './components/ProductConcept';
-import FuturisticFeatures from './components/FuturisticFeatures';
-import UseCases from './components/UseCases';
-import Testimonials from './components/Testimonials';
-import Blog from './components/Blog';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+
+// Lazy load components below the fold
+const ProductConcept = lazy(() => import('./components/ProductConcept'));
+const FuturisticFeatures = lazy(() => import('./components/FuturisticFeatures'));
+const UseCases = lazy(() => import('./components/UseCases'));
+const Empowering = lazy(() => import('./components/Empowering'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const Blog = lazy(() => import('./components/Blog'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
+
+// Loading fallback component
+const LoadingFallback = () => <div className="min-h-[200px] flex items-center justify-center text-brand-primary">Loading...</div>;
 
 function App() {
   return (
@@ -24,20 +30,23 @@ function App() {
               <main>
                 <Hero />
                 <LogoStrip />
-                <ProductConcept />
-                <FuturisticFeatures />
-                <UseCases />
-                <Empowering />
-                <Testimonials />
-                <Blog />
-                <Contact />
+                <Suspense fallback={<LoadingFallback />}>
+                  <ProductConcept />
+                  <FuturisticFeatures />
+                  <UseCases />
+                  <Empowering />
+                  <Testimonials />
+                  <Blog />
+                  <Contact />
+                </Suspense>
               </main>
             }
           />
         </Routes>
 
-        {/* Footer stays outside Routes so it shows on every page */}
-        <Footer />
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
       </Router>
     </div>
   );
