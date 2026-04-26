@@ -71,7 +71,7 @@ export default function FuturisticFeatures() {
             {/* Image & Floating Dashboard */}
             <div className="w-full lg:w-1/2 relative max-w-md lg:max-w-lg mx-auto">
               <div className="relative w-full aspect-video sm:aspect-4/3 rounded-2xl md:rounded-4xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-                <img src={feature.img} alt={feature.title} className="w-full h-full object-cover opacity-80 mix-blend-screen" />
+                <video src={feature.img} className="w-full h-full object-cover opacity-80 mix-blend-screen" autoPlay muted loop></video>
                 <div className="absolute inset-0 bg-brand-primary/10 mix-blend-overlay"></div>
               </div>
             </div>

@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import LogoStrip from './components/LogoStrip';
 import Empowering from './components/Empowering';
-import ProblemSolution from './components/ProblemSolution';
 import ProductConcept from './components/ProductConcept';
 import FuturisticFeatures from './components/FuturisticFeatures';
 import UseCases from './components/UseCases';
@@ -25,7 +24,6 @@ function App() {
               <main>
                 <Hero />
                 <LogoStrip />
-                <ProblemSolution />
                 <ProductConcept />
                 <FuturisticFeatures />
                 <UseCases />
