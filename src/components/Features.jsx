@@ -1,61 +1,92 @@
 import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { features } from '../constants/FeaturesData';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Features() {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 80%",
-          once: true
-        }
+    const idle = requestIdleCallback(() => {
+      import('gsap').then(({ gsap }) => {
+        import('gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
+          gsap.registerPlugin(ScrollTrigger);
+
+          const ctx = gsap.context(() => {
+            gsap.from(".features-title", {
+              y: 20,
+              opacity: 0,
+              duration: 0.5,
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 85%",
+                once: true
+              }
+            });
+
+            gsap.from(".feature-card", {
+              y: 25,
+              opacity: 0,
+              duration: 0.4,
+              stagger: 0.08, // lighter
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 80%",
+                once: true
+              }
+            });
+
+          }, containerRef);
+
+          return () => ctx.revert();
+        });
       });
+    });
 
-      tl.from(".features-title", { y: 20, opacity: 0, duration: 0.6 })
-        .from(".feature-card", {
-          y: 40,
-          opacity: 0,
-          duration: 0.6,
-          stagger: 0.15,
-          ease: "power2.out"
-        }, "-=0.3");
-    }, containerRef);
-
-    return () => ctx.revert();
+    return () => cancelIdleCallback(idle);
   }, []);
 
-
-
   return (
-    <section ref={containerRef} className="py-24 bg-brand-surface/20">
-      <div className="layout-container">
-        <div className="text-center mb-16 features-title">
-          <span className="text-brand-primary text-sm font-bold tracking-wider uppercase mb-4 block">Features</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white max-w-2xl mx-auto leading-tight">
-            Revolutionize Your Business with Our AI-Powered Features
+    <section ref={containerRef} className="py-16 sm:py-20 lg:py-24 bg-brand-surface/20">
+
+      <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+
+        {/* Header */}
+        <div className="text-center mb-12 sm:mb-16 features-title">
+          <span className="text-brand-primary text-xs sm:text-sm font-bold uppercase mb-3 block">
+            Features
+          </span>
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white max-w-2xl mx-auto leading-tight">
+            AI-Powered Features to Grow Your Business
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="feature-card group bg-brand-surface border border-white/5 p-8 rounded-3xl hover:-translate-y-2 hover:border-brand-primary/30 hover:shadow-[0_10px_30px_rgba(168,85,247,0.05)] transition-all duration-300"
+              className="feature-card group bg-white/5 backdrop-blur-lg border border-white/10 p-5 sm:p-6 rounded-2xl hover:-translate-y-1.5 hover:border-purple-500/30 hover:shadow-[0_10px_25px_rgba(168,85,247,0.08)] transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-primary/20 transition-all duration-300">
-                <feature.icon className="text-brand-primary text-2xl" />
+
+              {/* Icon */}
+              <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-105">
+                <feature.icon className="text-purple-400 text-xl" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
-              <p className="text-gray-400 leading-relaxed">{feature.desc}</p>
+
+              {/* Title */}
+              <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                {feature.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+                {feature.desc}
+              </p>
+
             </div>
           ))}
+
         </div>
       </div>
     </section>

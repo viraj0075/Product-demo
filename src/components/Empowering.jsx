@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import AboutUs from '../assets/About/About-us.gif';
+import AboutUs from '../assets/About/About-us.mp4';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,11 +87,8 @@ export default function Empowering() {
 
         <div className="flex-1 w-full max-w-md lg:max-w-lg mx-auto empower-image h-full">
           <div className="relative rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(168,85,247,0.15)] group">
-            <img
-              src={AboutUs}
-              alt="AI Voice Animation"
-              className="w-full h-auto object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
-            />
+            <video src={AboutUs} className="w-full h-full object-cover opacity-80 mix-blend-screen" autoPlay muted loop></video>
+
             {/* Subtle overlay for depth */}
             <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent pointer-events-none"></div>
           </div>
