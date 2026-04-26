@@ -9,7 +9,6 @@ export default function Hero() {
   const lenis = useLenis();
 
   useEffect(() => {
-    // ... existing GSAP code ...
     let ctx;
     let timeout;
 
@@ -101,11 +100,17 @@ export default function Hero() {
         </p>
 
         <div className="hero-btns-wrapper mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="w-fit mx-auto sm:mx-0 px-6 sm:px-8 py-3 sm:py-4 bg-brand-primary-dark text-white font-semibold rounded-full hover:bg-purple-600 hover:scale-95 transition-all duration-300 shadow-[0_0_20px_rgba(168,85,247,0.4)] cursor-pointer">
+          <button 
+            onClick={() => lenis?.scrollTo('#solutions', { offset: -80 })}
+            className="w-fit mx-auto sm:mx-0 px-6 sm:px-8 py-3 sm:py-4 bg-brand-primary-dark text-white font-semibold rounded-full hover:bg-purple-600 hover:scale-95 transition-all duration-300 shadow-[0_0_20px_rgba(168,85,247,0.4)] cursor-pointer"
+          >
             Explore Solutions
           </button>
 
-          <button className="w-fit mx-auto sm:mx-0 px-6 sm:px-8 py-3 sm:py-4 bg-white/10 border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-300 backdrop-blur-sm cursor-pointer">
+          <button 
+            onClick={() => lenis?.scrollTo('#contact', { offset: -80 })}
+            className="w-fit mx-auto sm:mx-0 px-6 sm:px-8 py-3 sm:py-4 bg-white/10 border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-300 backdrop-blur-sm cursor-pointer"
+          >
             Get Started
           </button>
         </div>
