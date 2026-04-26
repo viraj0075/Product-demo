@@ -40,7 +40,7 @@ export default function Blog() {
   }, []);
 
   return (
-    <section ref={containerRef} className="layout-container py-8 lg:py-14">
+    <section ref={containerRef} className="layout-container py-8 lg:py-14" id="blog">
       
       <div className="text-center mb-12 blog-title">
         <span className="text-brand-primary text-base lg:text-xl font-bold uppercase mb-4 block">

@@ -53,7 +53,7 @@ export default function ProductConcept() {
 
 
   return (
-    <section ref={containerRef} className="layout-container py-8 lg:py-14">
+    <section ref={containerRef} className="layout-container py-8 lg:py-14" id="solutions">
 
       {/* Header */}
       <div className="text-center max-w-4xl mx-auto mb-8 md:mb-12 animate-up">

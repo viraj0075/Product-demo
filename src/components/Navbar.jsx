@@ -48,15 +48,16 @@ export default function Navbar() {
 
             {/* Desktop Links */}
             <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-              <a href="#about" className="hover:text-brand-primary transition-colors">About Us</a>
+              <a href="#solutions" className="hover:text-brand-primary transition-colors">Solutions</a>
               <a href="#use-cases" className="hover:text-brand-primary transition-colors">Use Cases</a>
-              <a href="#pricing" className="hover:text-brand-primary transition-colors">Pricing</a>
-              <a href="#about" className="hover:text-brand-primary transition-colors">About</a>
+              <a href="#blog" className="hover:text-brand-primary transition-colors">Blog</a>
+              <a href="#about" className="hover:text-brand-primary transition-colors">About Us</a>
+              <a href="#contact" className="hover:text-brand-primary transition-colors">Contact</a>
             </div>
 
             <div className="hidden md:flex items-center gap-4">
               <button className="text-sm font-medium hover:text-white text-gray-300 transition-colors">Log In</button>
-              <button className="text-sm font-medium bg-brand-primary hover:bg-purple-600 text-white px-5 py-2 rounded-full transition-all hover:scale-105 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+              <button className="text-sm font-medium bg-brand-primary-dark hover:bg-purple-600 text-white px-5 py-2 rounded-full transition-all hover:scale-105 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]">
                 Get Started
               </button>
             </div>
@@ -88,13 +89,14 @@ export default function Navbar() {
           : "opacity-0 -translate-y-8 pointer-events-none"
           }`}
       >
-        <a href="#products" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Products</a>
+        <a href="#solutions" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Solutions</a>
         <a href="#use-cases" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Use Cases</a>
-        <a href="#pricing" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Pricing</a>
+        <a href="#blog" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Blog</a>
         <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">About Us</a>
+        <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-xl font-semibold text-gray-300 hover:text-white transition-colors">Contact</a>
 
         <div className="flex flex-col w-full max-w-[260px] gap-3 mt-6">
-          <button onClick={() => setIsMobileMenuOpen(false)} className="w-full text-base font-medium text-white bg-brand-primary py-3 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.4)] hover:bg-purple-600 transition-all hover:scale-105">
+          <button onClick={() => setIsMobileMenuOpen(false)} className="w-full text-base font-medium text-white bg-brand-primary-dark py-3 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.4)] hover:bg-purple-600 transition-all hover:scale-105">
             Get Started
           </button>
           <button onClick={() => setIsMobileMenuOpen(false)} className="w-full text-base font-medium text-gray-300 hover:text-white py-3 border border-white/10 rounded-full hover:bg-white/5 transition-all">
