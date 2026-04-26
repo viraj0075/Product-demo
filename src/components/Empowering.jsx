@@ -22,7 +22,6 @@ export default function Empowering() {
         .from(".empower-title", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
         .from(".empower-text", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
         .from(".empower-stat", { y: 20, opacity: 0, duration: 0.5, stagger: 0.1 }, "-=0.3")
-        .from(".empower-link", { opacity: 0, duration: 0.5 }, "-=0.3")
         .from(".empower-image", { y: 40, opacity: 0, duration: 0.8, ease: "power2.out" }, "-=0.8");
 
       // Number counter animation
@@ -87,7 +86,7 @@ export default function Empowering() {
 
         <div className="flex-1 w-full max-w-md lg:max-w-lg mx-auto empower-image h-full">
           <div className="relative rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(168,85,247,0.15)] group">
-            <video src={AboutUs} className="w-full h-full object-cover opacity-80 mix-blend-screen" autoPlay muted loop></video>
+            <video src={AboutUs} className="w-full h-full object-cover opacity-80 mix-blend-screen" autoPlay muted loop poster="/og-image.jpg"></video>
 
             {/* Subtle overlay for depth */}
             <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent pointer-events-none"></div>
