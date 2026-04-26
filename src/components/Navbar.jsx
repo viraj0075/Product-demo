@@ -61,7 +61,7 @@ export default function Navbar() {
       <div className="fixed top-3 left-0 w-full z-50">
         <div className="layout-container">
           <nav ref={navRef} className="w-full transition-all duration-300 bg-brand-surface/30 backdrop-blur-sm text-white border border-white/10 py-3 px-4 flex justify-between items-center rounded-2xl md:rounded-full">
-            <div className="flex items-center gap-2 cursor-pointer group" onClick={() => navigate('/')}>
+            <div className="flex items-center gap-2 cursor-pointer group" onClick={() => lenis?.scrollTo(0)}>
               <BiChart className="text-brand-primary text-xl group-hover:scale-110 transition-transform" />
               <span className="font-bold text-xl tracking-tight">DataWise</span>
             </div>
