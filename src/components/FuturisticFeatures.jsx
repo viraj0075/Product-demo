@@ -31,7 +31,7 @@ export default function FuturisticFeatures() {
 
 
   return (
-    <section ref={containerRef} className="layout-container py-8 lg:py-14">
+    <section ref={containerRef} className="layout-container py-8 lg:py-14" id="features">
       <div className="text-center mb-8 md:mb-12 animate-up">
         <span className="text-brand-primary text-base lg:text-xl font-bold tracking-wider uppercase mb-4 block">Capabilities</span>
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
