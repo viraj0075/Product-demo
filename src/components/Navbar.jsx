@@ -45,7 +45,7 @@ export default function Navbar() {
     if (lenis) {
       lenis.scrollTo(targetId, {
         offset: -80, // Offset for fixed navbar
-        duration: 1.5,
+        duration: 2,
       });
     } else {
       // Fallback
@@ -55,6 +55,7 @@ export default function Navbar() {
       }
     }
   };
+
 
   return (
     <>
